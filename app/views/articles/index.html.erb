@@ -1,0 +1,30 @@
+<h1>Article#index</h1>
+<%= link_to "Add New", new_article_path %>
+<table border="1" width="100%">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Title</th>
+			<th>Description</th>
+			<th>Created At</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @articles.each do |article| %>
+		<tr>
+			<td width="5%"><%= article.id %></td>
+			<td width="30%"><%= article.title %></td>
+			<td><%= article.description %></td>
+			<td width="20%"><%= article.created_at.strftime("%d-%m-%Y at %I:%M%p") %></td>
+			<td width="10%">
+				<%= link_to "Show", article_path(article) %>
+				<%= link_to "Edit", edit_article_path(article) %>
+				<%= link_to "Destroy", article_path(article),
+				method: :delete,
+				data: {confirm: 'Are you sure?'} %>
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
