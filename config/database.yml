@@ -17,3 +17,12 @@ default: &default
 development:
   <<: *default
   database: blog
+
+production:
+  adapter: postgresql
+  host: ec2-50-19-125-201.compute-1.amazonaws.com
+  database: dfnlj2o18qt9sb
+  user: cobkfkhsfaboli
+  port: 5432
+  password: b17b74e04eff5da0749b6347288ee2e15932795736a933c400462c11e1baebfb
+  uri: postgres://cobkfkhsfaboli:b17b74e04eff5da0749b6347288ee2e15932795736a933c400462c11e1baebfb@ec2-50-19-125-201.compute-1.amazonaws.com:5432/dfnlj2o18qt9sb
